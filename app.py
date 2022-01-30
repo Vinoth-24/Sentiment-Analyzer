@@ -41,7 +41,7 @@ def predict():
         my_prediction = prediction(processed)
         return render_template('result.html', prediction=my_prediction)
 
-port = int(os.environ.get('PORT', 5000))
+port = int(os.environ.get('PORT', 33507))
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=port, debug=True)
