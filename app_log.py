@@ -25,7 +25,7 @@ transformer = TfidfTransformer()
 loaded_vec = CountVectorizer(decode_error="replace",vocabulary=pickle.load(open("feature.pkl", "rb")))
 
 
-app_log = Flask(__name__)
+app = Flask(__name__)
 
 @app.route('/')
 def home():
