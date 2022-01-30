@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 import pickle
 import re
 import numpy as np
+import os
 from functions import *
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
@@ -40,5 +41,7 @@ def predict():
         my_prediction = prediction(processed)
         return render_template('result.html', prediction=my_prediction)
 
+port = int(os.environ.get('PORT', 5000))
+
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(host='0.0.0.0', port=port, debug=True)
